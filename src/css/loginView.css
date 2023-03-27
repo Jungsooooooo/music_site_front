@@ -1,0 +1,27 @@
+.loginType {
+  border: 1px solid;
+  width: 30em;
+  padding: 20px 28px;
+  margin: 10em auto;
+}
+
+.logo {
+  font-size: 30px;
+  color: rgb(53, 197, 240);
+}
+
+#putId {
+  width: 200px;
+  height: 35px;
+}
+
+#putPass {
+  width: 200px;
+  height: 35px;
+}
+
+.loginButton {
+  margin-top: 15px;
+  width: 210px;
+  background-color: rgb(53, 197, 240);
+}
