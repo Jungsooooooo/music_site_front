@@ -1,27 +1,55 @@
 .loginType {
-  border: 1px solid;
+  /* border: 1px solid; */
   width: 30em;
   padding: 20px 28px;
   margin: 10em auto;
 }
 
 .logo {
-  font-size: 30px;
-  color: rgb(53, 197, 240);
+  font-size: 50px;
+  color: rgb(51, 102, 255);
+  text-decoration: none;
 }
 
 #putId {
-  width: 200px;
+  margin-top: 45px;
+  width: 300px;
   height: 35px;
 }
 
 #putPass {
-  width: 200px;
+  width: 300px;
   height: 35px;
 }
 
 .loginButton {
+  color: white;
+  margin-top: 60px;
+  width: 310px;
+  background-color: rgb(51, 102, 255);
+  border: none;
+  height: 40px;
+  cursor: pointer;
+}
+
+.joinOrFind {
   margin-top: 15px;
-  width: 210px;
-  background-color: rgb(53, 197, 240);
+  font-size: 15px;
+}
+
+#register {
+  margin-right: 10px;
+  text-decoration: none;
+  color: gray;
+}
+
+#findId {
+  margin-right: 10px;
+  text-decoration: none;
+  color: gray;
+}
+
+#findPassword {
+  color: gray;
+  text-decoration: none;
 }
