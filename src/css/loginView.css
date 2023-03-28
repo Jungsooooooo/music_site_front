@@ -7,7 +7,7 @@
 
 .logo {
   font-size: 50px;
-  color: rgb(51, 102, 255);
+  color: rgb(255, 102, 153);
   text-decoration: none;
 }
 
@@ -26,7 +26,7 @@
   color: white;
   margin-top: 60px;
   width: 310px;
-  background-color: rgb(51, 102, 255);
+  background-color: rgb(255, 102, 153);
   border: none;
   height: 40px;
   cursor: pointer;
