@@ -2,3 +2,11 @@
   background-color: rgb(255, 102, 153);
   height: 11px;
 }
+
+.mainHeader {
+  height: 50px;
+}
+
+#goToReco {
+  font-size: 30px;
+}
