@@ -4,14 +4,17 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import LoginView from "./music/user/LoginView";
 import MainView from "./music/main/MainView";
+import MakeUser from "./music/user/MakeUser";
 
 function App() {
   return (
     <div className="App">
       <Router>
         <Routes>
-          <Route path="/login" element={<LoginView />} />
           <Route path="/" element={<MainView />}></Route>
+
+          <Route path="/login" element={<LoginView />} />
+          <Route path="/join" element={<MakeUser />} />
         </Routes>
       </Router>
     </div>

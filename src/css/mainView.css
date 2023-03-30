@@ -4,7 +4,9 @@
 }
 
 .mainHeader {
+  margin-top: 20px;
   height: 50px;
+  border-bottom: 1px solid slategray;
 }
 
 #goToReco {

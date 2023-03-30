@@ -1,0 +1,40 @@
+#makeId {
+  width: 300px;
+  height: 35px;
+}
+
+#makePass {
+  width: 300px;
+  height: 35px;
+}
+
+#checkPass {
+  width: 300px;
+  height: 35px;
+  margin-bottom: 10px;
+}
+
+#makeName {
+  width: 300px;
+  height: 35px;
+}
+
+#birth {
+  width: 300px;
+  height: 35px;
+}
+
+#sex {
+  width: 300px;
+  height: 35px;
+}
+
+#email {
+  width: 300px;
+  height: 35px;
+}
+
+#phoneNumber {
+  width: 300px;
+  height: 35px;
+}
