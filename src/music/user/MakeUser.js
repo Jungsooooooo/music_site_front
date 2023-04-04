@@ -13,6 +13,14 @@ const MakeUser = () => {
     });
   };
 
+  const checkId = () => {
+    const id = document.getElementById("makeId").value;
+
+    return axios.get("/api/user/" + id).then((res) => {
+      console.log(res.data);
+    });
+  };
+
   return (
     <>
       <div className="topColor"></div>
@@ -23,6 +31,7 @@ const MakeUser = () => {
         <div>
           <h3>아이디</h3>
           <input id="makeId" type="text" className="col" placeholder="아이디를 입력해주세요"></input>
+          <button onClick={checkId}>중복확인</button>
         </div>
         <div>
           <h3>비밀번호</h3>
@@ -41,22 +50,17 @@ const MakeUser = () => {
 
         <div>
           <h3>생년월일</h3>
-          <input id="birth" type="text"></input>
-        </div>
-
-        <div>
-          <h3>성별</h3>
-          <input id="sex" type="text"></input>
+          <input id="birth" type="date"></input>
         </div>
 
         <div>
           <h3>본인확인 이메일</h3>
-          <input id="email" type="text"></input>
+          <input id="email" type="email"></input>
         </div>
 
         <div>
           <h3>휴대전화</h3>
-          <input id="phoneNumber" type="text"></input>
+          <input id="phoneNumber" type="tel"></input>
         </div>
 
         <div>
