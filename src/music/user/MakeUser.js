@@ -1,16 +1,33 @@
 import "../../css/MakeUser.css";
 import axios from "axios";
 
+import { modal } from "antd";
+
+import { useState } from "react";
+
 const MakeUser = () => {
+  const [idCheck, setIdCheck] = useState(null);
   const createUser = () => {
     const input = {
       id: document.getElementById("makeId").value,
       password: document.getElementById("makePass").value,
     };
 
-    return axios.post("/api/user", input).then((res) => {
-      console.log(res);
-    });
+    if (idCheck === false) {
+      alert("이미 있는 아이디 입니다.");
+    } else if (idCheck === null) {
+      alert("아이디 중복확인을 해주세요.");
+    } else {
+      return axios.post("/api/user", input).then((res) => {
+        console.log(res.data);
+
+        if (res.data === true) {
+          setIdCheck(false);
+        } else {
+          setIdCheck(true);
+        }
+      });
+    }
   };
 
   const checkId = () => {
@@ -31,7 +48,9 @@ const MakeUser = () => {
         <div>
           <h3>아이디</h3>
           <input id="makeId" type="text" className="col" placeholder="아이디를 입력해주세요"></input>
-          <button onClick={checkId}>중복확인</button>
+          <button id="idCheckButton" onClick={checkId}>
+            중복확인
+          </button>
         </div>
         <div>
           <h3>비밀번호</h3>

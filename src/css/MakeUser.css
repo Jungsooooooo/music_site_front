@@ -46,3 +46,8 @@
   width: 300px;
   height: 35px;
 }
+
+#idCheckButton {
+  margin-left: 20px;
+  height: 40px;
+}
