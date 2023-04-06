@@ -7,25 +7,21 @@ import { useState } from "react";
 
 const MakeUser = () => {
   const [idCheck, setIdCheck] = useState(null);
+
   const createUser = () => {
     const input = {
       id: document.getElementById("makeId").value,
       password: document.getElementById("makePass").value,
     };
 
-    if (idCheck === false) {
-      alert("이미 있는 아이디 입니다.");
-    } else if (idCheck === null) {
+    if (idCheck === null) {
       alert("아이디 중복확인을 해주세요.");
+    } else if (idCheck === false) {
+      alert("이미 있는 아이디 입니다.");
     } else {
       return axios.post("/api/user", input).then((res) => {
         console.log(res.data);
-
-        if (res.data === true) {
-          setIdCheck(false);
-        } else {
-          setIdCheck(true);
-        }
+        alert("회원가입이 완료되었습니다");
       });
     }
   };
@@ -35,6 +31,12 @@ const MakeUser = () => {
 
     return axios.get("/api/user/" + id).then((res) => {
       console.log(res.data);
+      if (res.data === true) {
+        alert("이미 있는 아이디 입니다.");
+        setIdCheck(false);
+      } else {
+        setIdCheck(true);
+      }
     });
   };
 

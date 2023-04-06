@@ -1,9 +1,17 @@
 import React from "react";
 import "../../css/loginView.css";
+import axios from "axios";
 
 const LoginView = () => {
   const login = () => {
-    console.log("login");
+    const input = {
+      id: document.getElementById("putId").value,
+      password: document.getElementById("putId").value,
+    };
+
+    return axios.get("/api/user", input).then((res) => {
+      console.log(res.data);
+    });
   };
 
   return (
