@@ -35,6 +35,7 @@ const MakeUser = () => {
         alert("이미 있는 아이디 입니다.");
         setIdCheck(false);
       } else {
+        alert("사용 가능한 아이디 입니다.");
         setIdCheck(true);
       }
     });

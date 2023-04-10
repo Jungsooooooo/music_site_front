@@ -1,16 +1,26 @@
 import React from "react";
 import "../../css/loginView.css";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { addUser } from "../../store/userSlice";
 
 const LoginView = () => {
+  const dispatch = useDispatch();
+
   const login = () => {
     const input = {
       id: document.getElementById("putId").value,
-      password: document.getElementById("putId").value,
+      password: document.getElementById("putPass").value,
     };
 
-    return axios.get("/api/user", input).then((res) => {
-      console.log(res.data);
+    return axios.post("/api/user/login", input).then((res) => {
+      console.log(res);
+
+      if (res.status === 200) {
+        alert("나와발");
+        dispatch(addUser(input));
+        window.location.href = "/";
+      }
     });
   };
 

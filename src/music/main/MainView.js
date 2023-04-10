@@ -1,6 +1,13 @@
 import "../../css/mainView.css";
+import { useSelector } from "react-redux";
 
 const MainView = () => {
+  const user = useSelector((state) => {
+    return state.user.userSession;
+  });
+
+  console.log({ user });
+
   return (
     <>
       <div className="topColor"></div>
