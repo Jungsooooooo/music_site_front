@@ -2,7 +2,7 @@ import React from "react";
 import "../../css/loginView.css";
 import axios from "axios";
 import { useDispatch } from "react-redux";
-import { addUser } from "../../store/userSlice";
+import { sessionInfo } from "../../store/userSession";
 
 const LoginView = () => {
   const dispatch = useDispatch();
@@ -18,8 +18,8 @@ const LoginView = () => {
 
       if (res.status === 200) {
         alert("나와발");
-        dispatch(addUser(input));
-        window.location.href = "/";
+        dispatch(sessionInfo({ id: document.getElementById("putId").value }));
+        // window.location.href = "/";
       }
     });
   };

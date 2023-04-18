@@ -11,8 +11,7 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
-          <Route path="/" element={<MainView />}></Route>
-
+          <Route path="/" element={<MainView />} />
           <Route path="/login" element={<LoginView />} />
           <Route path="/join" element={<MakeUser />} />
         </Routes>

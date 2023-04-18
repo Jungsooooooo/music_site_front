@@ -3,7 +3,8 @@ import { useSelector } from "react-redux";
 
 const MainView = () => {
   const user = useSelector((state) => {
-    return state.user.userSession;
+    console.log(state);
+    return state.userSession;
   });
 
   console.log({ user });

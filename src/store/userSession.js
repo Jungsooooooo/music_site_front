@@ -3,7 +3,7 @@ export const session = "userSession";
 export const sessionInfo = (userId) => ({ type: session, userId });
 
 const initialState = {
-  userId: "",
+  id: "",
 };
 
 const userSession = (state = initialState, action) => {
@@ -11,7 +11,7 @@ const userSession = (state = initialState, action) => {
     case session:
       return {
         ...state,
-        userId: action.userId,
+        id: action.userId,
       };
 
     default:
