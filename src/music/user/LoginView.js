@@ -19,7 +19,6 @@ const LoginView = () => {
       if (res.status === 200) {
         alert("나와발");
         dispatch(sessionInfo({ id: document.getElementById("putId").value }));
-        // window.location.href = "/";
       }
     });
   };

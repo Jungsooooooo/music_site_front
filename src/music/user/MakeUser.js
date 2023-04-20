@@ -1,8 +1,5 @@
 import "../../css/MakeUser.css";
 import axios from "axios";
-
-import { modal } from "antd";
-
 import { useState } from "react";
 
 const MakeUser = () => {
