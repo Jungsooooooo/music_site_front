@@ -8,6 +8,7 @@ import music3 from "./music3.jpg";
 
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
+import Button from "react-bootstrap/Button";
 
 import CardGroup from "react-bootstrap/CardGroup";
 
@@ -39,6 +40,7 @@ const MainView = () => {
                 <Card.Title>음악 추천 1</Card.Title>
                 <Card.Text>추천1</Card.Text>
               </Card.Body>
+              <Button variant="outline-primary">Primary</Button>
               <Card.Footer>
                 <small className="text-muted">Last updated 3 mins ago</small>
               </Card.Footer>

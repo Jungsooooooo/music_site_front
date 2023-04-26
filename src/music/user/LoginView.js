@@ -3,10 +3,12 @@ import "../../css/loginView.css";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { sessionInfo } from "../../store/userSession";
+import { useNavigate } from "react-router-dom";
 import { Redirect } from "react-router-dom";
 
 const LoginView = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const login = () => {
     const input = {
@@ -20,6 +22,7 @@ const LoginView = () => {
       if (res.status === 200) {
         alert("나와발");
         dispatch(sessionInfo({ id: document.getElementById("putId").value }));
+        navigate("/");
       }
     });
   };
