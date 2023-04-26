@@ -2,6 +2,9 @@ import "../../css/mainView.css";
 import { useSelector } from "react-redux";
 
 import prettier from "./prettier.PNG";
+import music1 from "./music1.jpg";
+import music2 from "./music2.jpg";
+import music3 from "./music3.jpg";
 
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
@@ -22,7 +25,7 @@ const MainView = () => {
     <>
       <div className="topColor" />
       <div className="mainHeader">
-        <a id="goToReco" className="Topheader">
+        <a id="goToReco" className="topheader">
           Music_Reco
         </a>
       </div>
@@ -31,13 +34,10 @@ const MainView = () => {
         <Row>
           <Col>
             <Card style={{ float: "left", width: "500px" }}>
-              <Card.Img variant="top" src={prettier} />
+              <Card.Img variant="top" src={music1} className="mainImage" />
               <Card.Body>
-                <Card.Title>Card title</Card.Title>
-                <Card.Text>
-                  This is a wider card with supporting text below as a natural lead-in to additional content. This
-                  content is a little bit longer.
-                </Card.Text>
+                <Card.Title>음악 추천 1</Card.Title>
+                <Card.Text>추천1</Card.Text>
               </Card.Body>
               <Card.Footer>
                 <small className="text-muted">Last updated 3 mins ago</small>
@@ -45,23 +45,20 @@ const MainView = () => {
             </Card>
           </Col>
           <Card style={{ float: "left", width: "500px" }}>
-            <Card.Img variant="top" src={prettier} />
+            <Card.Img variant="top" src={music2} className="mainImage" />
             <Card.Body>
-              <Card.Title>Card title</Card.Title>
-              <Card.Text>This card has supporting text below as a natural lead-in to additional content. </Card.Text>
+              <Card.Title>음악 추천 2</Card.Title>
+              <Card.Text>추천2</Card.Text>
             </Card.Body>
             <Card.Footer>
               <small className="text-muted">Last updated 3 mins ago</small>
             </Card.Footer>
           </Card>
           <Card style={{ float: "left", width: "500px" }}>
-            <Card.Img variant="top" src={prettier} />
+            <Card.Img variant="top" src={music3} className="mainImage" />
             <Card.Body>
-              <Card.Title>Card title</Card.Title>
-              <Card.Text>
-                This is a wider card with supporting text below as a natural lead-in to additional content. This card
-                has even longer content than the first to show that equal height action.
-              </Card.Text>
+              <Card.Title>음악 추천 3</Card.Title>
+              <Card.Text>추천3</Card.Text>
             </Card.Body>
             <Card.Footer>
               <small className="text-muted">Last updated 3 mins ago</small>
