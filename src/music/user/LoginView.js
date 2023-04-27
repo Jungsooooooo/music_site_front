@@ -4,7 +4,6 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 import { sessionInfo } from "../../store/userSession";
 import { useNavigate } from "react-router-dom";
-import { Redirect } from "react-router-dom";
 
 const LoginView = () => {
   const dispatch = useDispatch();
@@ -19,10 +18,12 @@ const LoginView = () => {
     return axios.post("/api/user/login", input).then((res) => {
       console.log(res);
 
-      if (res.status === 200) {
-        alert("나와발");
+      if (res.status === 200 && res.data.id !== "") {
+        alert("환영합니다");
         dispatch(sessionInfo({ id: document.getElementById("putId").value }));
         navigate("/");
+      } else {
+        alert("정확한 아이디와 비밀번호를 입력해주세요");
       }
     });
   };

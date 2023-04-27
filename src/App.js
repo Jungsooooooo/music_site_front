@@ -6,7 +6,7 @@ import LoginView from "./music/user/LoginView";
 import MainView from "./music/main/MainView";
 import MakeUser from "./music/user/MakeUser";
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <Router>
@@ -18,6 +18,6 @@ function App() {
       </Router>
     </div>
   );
-}
+};
 
 export default App;

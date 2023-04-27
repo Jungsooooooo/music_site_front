@@ -20,3 +20,8 @@
 .mainImage {
   height: 300px;
 }
+
+#loginButton {
+  font-size: 20px;
+  margin-left: 45em;
+}

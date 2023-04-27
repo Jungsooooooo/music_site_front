@@ -9,6 +9,9 @@ const MakeUser = () => {
     const input = {
       id: document.getElementById("makeId").value,
       password: document.getElementById("makePass").value,
+      address: document.getElementById("makeAddress").value,
+      phone: document.getElementById("phoneNumber").value,
+      birth: document.getElementById("birth").value,
     };
 
     if (idCheck === null) {
@@ -75,6 +78,11 @@ const MakeUser = () => {
         <div>
           <h3>본인확인 이메일</h3>
           <input id="email" type="email"></input>
+        </div>
+
+        <div>
+          <h3>주소</h3>
+          <input id="makeAddress" type="text"></input>
         </div>
 
         <div>
