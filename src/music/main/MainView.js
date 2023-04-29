@@ -1,6 +1,7 @@
 import "../../css/mainView.css";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 import prettier from "./prettier.PNG";
 import music1 from "./music1.jpg";
@@ -10,6 +11,7 @@ import music3 from "./music3.jpg";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import { Button } from "react-bootstrap-buttons";
+import { sessionInfo } from "../../store/userSession";
 
 import CardGroup from "react-bootstrap/CardGroup";
 
@@ -20,11 +22,17 @@ const MainView = () => {
     console.log(state);
     return state.userSession;
   });
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   console.log({ user });
 
   const goTologin = () => {
     navigate("/login");
+  };
+
+  const logout = () => {
+    navigate("/login");
+    dispatch(sessionInfo({ id: "" }));
   };
 
   return (
@@ -35,7 +43,7 @@ const MainView = () => {
           Music_Reco
         </a>
         {user.id !== "" ? (
-          <Button variant="primary" id="loginButton" className="topheader" onClick={goTologin}>
+          <Button variant="primary" id="loginButton" className="topheader" onClick={logout}>
             로그아웃
           </Button>
         ) : (
