@@ -13,6 +13,8 @@ import Row from "react-bootstrap/Row";
 import { Button } from "react-bootstrap-buttons";
 import { sessionInfo } from "../../store/userSession";
 
+import TopHeader from "./TopHeader";
+
 import CardGroup from "react-bootstrap/CardGroup";
 
 import Card from "react-bootstrap/Card";
@@ -35,24 +37,13 @@ const MainView = () => {
     dispatch(sessionInfo({ id: "" }));
   };
 
+  const goToWrite = () => {
+    navigate("/login");
+    dispatch(sessionInfo({ id: "" }));
+  };
+
   return (
     <>
-      <div className="topColor" />
-      <div className="mainHeader">
-        <a id="goToReco" className="topheader">
-          Music_Reco
-        </a>
-        {user.id !== "" ? (
-          <Button variant="primary" id="loginButton" className="topheader" onClick={logout}>
-            로그아웃
-          </Button>
-        ) : (
-          <Button variant="primary" id="loginButton" className="topheader" onClick={goTologin}>
-            로그인
-          </Button>
-        )}
-      </div>
-
       <div style={{ margin: "30px 0 0 100px" }}>
         <Row>
           <Col>

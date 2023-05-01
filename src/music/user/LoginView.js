@@ -30,7 +30,6 @@ const LoginView = () => {
 
   return (
     <>
-      <div className="topColor"></div>
       <div className="loginType">
         <a href="/" className="logo">
           Music Reco

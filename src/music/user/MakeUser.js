@@ -43,7 +43,6 @@ const MakeUser = () => {
 
   return (
     <>
-      <div className="topColor"></div>
       <div className="joinType">
         <a href="/" className="logo">
           Music Reco
