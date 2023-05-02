@@ -13,12 +13,28 @@ import Row from "react-bootstrap/Row";
 import { Button } from "react-bootstrap-buttons";
 import { sessionInfo } from "../../store/userSession";
 
+import "../../css/MusicWrite.css";
+
 const MusicWrite = () => {
   const user = useSelector((state) => {
     console.log(state);
     return state.userSession;
   });
-  return <></>;
+  return (
+    <div className="center">
+      <form onSubmit={""}></form>
+      <label className="labelright">제목:</label>
+      <input type="text" />
+      <div className="center">
+        <label className="labelright">장르:</label>
+        <input type="text" />
+      </div>
+      <div className="center">
+        <label className="labelright">추천내용:</label>
+        <textarea rows={10} cols={50} />
+      </div>
+    </div>
+  );
 };
 
 export default MusicWrite;
