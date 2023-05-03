@@ -9,14 +9,20 @@ import logger from "redux-logger";
 import { composeWithDevTools } from "redux-devtools-extension";
 import rootReducer from "./store/rootReducer";
 
+import { persistStore } from "redux-persist";
+import { PersistGate } from "redux-persist/integration/react";
+
 const enhancer =
   process.env.NODE_ENV === "production" ? compose(applyMiddleware()) : composeWithDevTools(applyMiddleware(logger));
 
 const store = createStore(rootReducer, enhancer);
+const persistor = persistStore(store);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Provider store={store}>
-    <App />
+    <PersistGate loading={null} persistor={persistor}>
+      <App />
+    </PersistGate>
   </Provider>
 );
