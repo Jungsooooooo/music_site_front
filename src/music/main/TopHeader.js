@@ -10,7 +10,7 @@ import music3 from "./music3.jpg";
 
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-import { Button } from "react-bootstrap-buttons";
+import Button from "@mui/material/Button";
 import { sessionlogout } from "../../store/userSession";
 
 import CardGroup from "react-bootstrap/CardGroup";
@@ -45,15 +45,29 @@ const TopHeader = () => {
     <>
       <div className="topColor" />
       <div className="mainHeader">
-        <a id="goToReco" className="topheader">
+        <a id="goToReco" className="topheader" href="/">
           Music_Reco
         </a>
         {user.id !== "" ? (
           <>
-            <Button variant="primary" id="musicWrite" className="topheader" onClick={goToWrite}>
+            <Button
+              variant="outlined"
+              color="secondary"
+              size="medium"
+              id="musicWrite"
+              className="topheader"
+              onClick={goToWrite}
+            >
               글쓰기
             </Button>
-            <Button variant="primary" id="loginButton" className="topheader" onClick={logout}>
+            <Button
+              variant="outlined"
+              color="secondary"
+              size="medium"
+              id="loginButton"
+              className="topheader"
+              onClick={logout}
+            >
               로그아웃
             </Button>
           </>
