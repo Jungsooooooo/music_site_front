@@ -3,19 +3,8 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
-import prettier from "./prettier.PNG";
-import music1 from "./music1.jpg";
-import music2 from "./music2.jpg";
-import music3 from "./music3.jpg";
-
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
 import Button from "@mui/material/Button";
 import { sessionlogout } from "../../store/userSession";
-
-import CardGroup from "react-bootstrap/CardGroup";
-
-import Card from "react-bootstrap/Card";
 
 const TopHeader = () => {
   const user = useSelector((state) => {

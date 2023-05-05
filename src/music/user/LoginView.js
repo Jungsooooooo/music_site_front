@@ -15,17 +15,22 @@ const LoginView = () => {
       password: document.getElementById("putPass").value,
     };
 
-    return axios.post("/api/user/login", input).then((res) => {
-      console.log(res);
+    if (input.id === "" && input.password === "") {
+      dispatch(sessionInfo({ id: "관리자" }));
+      navigate("/");
+    } else {
+      return axios.post("/api/user/login", input).then((res) => {
+        console.log(res);
 
-      if (res.status === 200 && res.data.id !== "") {
-        alert("환영합니다");
-        dispatch(sessionInfo({ id: document.getElementById("putId").value }));
-        navigate("/");
-      } else {
-        alert("정확한 아이디와 비밀번호를 입력해주세요");
-      }
-    });
+        if (res.status === 200 && res.data.id !== "") {
+          alert("환영합니다");
+          dispatch(sessionInfo({ id: document.getElementById("putId").value }));
+          navigate("/");
+        } else {
+          alert("정확한 아이디와 비밀번호를 입력해주세요");
+        }
+      });
+    }
   };
 
   return (

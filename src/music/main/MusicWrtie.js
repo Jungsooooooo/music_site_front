@@ -1,17 +1,7 @@
 import "../../css/mainView.css";
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
 
-import prettier from "./prettier.PNG";
-import music1 from "./music1.jpg";
-import music2 from "./music2.jpg";
-import music3 from "./music3.jpg";
-
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
-import { Button } from "react-bootstrap-buttons";
-import { sessionInfo } from "../../store/userSession";
+import Button from "@mui/material/Button";
 
 import "../../css/MusicWrite.css";
 
@@ -20,6 +10,9 @@ const MusicWrite = () => {
     console.log(state);
     return state.userSession;
   });
+
+  const musicRecoWrite = () => {};
+
   return (
     <div className="center">
       <form onSubmit={""}></form>
@@ -30,8 +23,13 @@ const MusicWrite = () => {
         <input type="text" />
       </div>
       <div className="center">
-        <label className="labelright">추천내용:</label>
+        <label className="labelright">추천이유:</label>
         <textarea rows={10} cols={50} />
+      </div>
+      <div className="center">
+        <Button variant="contained" color="success">
+          작성
+        </Button>
       </div>
     </div>
   );
