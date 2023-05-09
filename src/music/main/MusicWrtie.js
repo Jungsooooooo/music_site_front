@@ -14,11 +14,14 @@ const MusicWrite = () => {
     return state.userSession;
   });
 
+  console.log({ user });
+
   const musicRecoWrite = () => {
     const input = {
       title: document.getElementById("title").value,
       genre: document.getElementById("genre").value,
       recoReason: document.getElementById("recoReason").value,
+      // userUUID: user.uid,
     };
     axios.post("/api/musicMain", input);
   };
