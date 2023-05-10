@@ -21,7 +21,7 @@ const MusicWrite = () => {
       title: document.getElementById("title").value,
       genre: document.getElementById("genre").value,
       recoReason: document.getElementById("recoReason").value,
-      // userUUID: user.uid,
+      userUUID: user.uid,
     };
     axios.post("/api/musicMain", input);
   };
