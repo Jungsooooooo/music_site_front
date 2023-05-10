@@ -15,8 +15,8 @@ const userSession = (state = initialState, action) => {
     case session:
       return {
         ...state,
-        id: action.userId,
-        uid: action.uid,
+        id: action.userId.id,
+        uid: action.uid.uid,
         login: true,
       };
     case logout:
