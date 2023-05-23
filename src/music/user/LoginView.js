@@ -13,6 +13,7 @@ const LoginView = () => {
     const input = {
       id: document.getElementById("putId").value,
       password: document.getElementById("putPass").value,
+
     };
 
     if (input.id === "" && input.password === "") {
@@ -20,6 +21,7 @@ const LoginView = () => {
       navigate("/");
     } else {
       return axios.post("/api/user/login", input).then((res) => {
+
         console.log({ res });
 
         if (res.status === 200 && res.data.id !== "") {

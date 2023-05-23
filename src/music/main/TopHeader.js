@@ -37,7 +37,7 @@ const TopHeader = () => {
         <a id="goToReco" className="topheader" href="/">
           Music_Reco
         </a>
-        {user.id !== "" ? (
+        {user.login === true ? (
           <>
             <Button
               variant="outlined"
@@ -61,7 +61,9 @@ const TopHeader = () => {
             </Button>
           </>
         ) : (
-          <Button variant="primary" id="loginButton" className="topheader" onClick={goTologin}>
+          <Button  variant="outlined"
+          color="secondary"
+          size="medium" id="musicWrite" className="topheader" onClick={goTologin}>
             로그인
           </Button>
         )}
