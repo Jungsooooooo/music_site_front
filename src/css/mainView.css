@@ -26,9 +26,8 @@
 }
 
 #musicWrite {
-  font-size: 15px;
-  margin-left: 60em;
-  margin-right: 1em;
+ float:right;
+ margin-right:25px;
 }
 
 a:visited {
@@ -40,3 +39,21 @@ a:link {
   text-decoration: none;
   color: rgb(255, 102, 153);
 }
+
+
+/* @media(max-width: 1600px) {
+  #musicWrite {
+    font-size: 15px;
+    margin-left: 40em;
+    margin-right: 1em;
+  }
+} */
+
+
+/* @media(max-width: 1920px) {
+  #musicWrite {
+    font-size: 15px;
+    margin-left: 60em;
+    margin-right: 1em;
+  }
+} */

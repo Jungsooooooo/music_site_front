@@ -38,7 +38,7 @@ const TopHeader = () => {
           Music_Reco
         </a>
         {user.login === true ? (
-          <>
+          <div id = "musicWrite">
             <Button
               variant="outlined"
               color="secondary"
@@ -59,7 +59,7 @@ const TopHeader = () => {
             >
               로그아웃
             </Button>
-          </>
+          </div>
         ) : (
           <Button  variant="outlined"
           color="secondary"
