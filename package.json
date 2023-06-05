@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@ckeditor/ckeditor5-build-classic": "^38.0.1",
+    "@ckeditor/ckeditor5-react": "^6.0.0",
     "@emotion/react": "^11.10.8",
     "@emotion/styled": "^11.10.8",
     "@mui/material": "^5.12.3",
@@ -21,6 +23,7 @@
     "react-bootstrap-buttons": "^1.0.0",
     "react-bootstrap-carousel": "^4.1.1",
     "react-dom": "^18.2.0",
+    "react-native-ckeditor": "^1.0.2",
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.9.0",
     "react-scripts": "5.0.1",
