@@ -1,0 +1,9 @@
+.entireForm {
+  text-align: center;
+  width: 800px;
+  margin: 0 auto;
+}
+
+.ck.ck-editor__editable:not(.ck-editor__nested-editable) {
+  min-height: 40em;
+}
