@@ -1,7 +1,5 @@
 import "../../css/mainView.css";
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
 
 import music1 from "./music1.jpg";
 import music2 from "./music2.jpg";
@@ -15,12 +13,8 @@ import Card from "react-bootstrap/Card";
 
 const MainView = () => {
   const user = useSelector((state) => {
-    console.log(state);
     return state.userSession;
   });
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
-  console.log({ user });
 
   return (
     <>
