@@ -1,9 +1,8 @@
 .loginType {
   /* border: 1px solid; */
-  width: 30em;
-  padding: 20px 28px;
-  margin-left: 50em;
-  margin-top: 15em;
+  width: 20em;
+  /* padding: 20px 28px; */
+  margin: 9em auto;
 }
 
 .logo {
