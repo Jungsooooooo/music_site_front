@@ -18,6 +18,10 @@ const MakeUser = () => {
       alert("아이디 중복확인을 해주세요.");
     } else if (idCheck === false) {
       alert("이미 있는 아이디 입니다.");
+    } else if (document.getElementById("makePass").value.length < 8) {
+      alert("비밀번호는 8자리 이상 입력해주세요.");
+    } else if (document.getElementById("makePass").value !== document.getElementById("checkPass").value) {
+      alert("비밀번호를 확인해주세요.");
     } else {
       return axios.post("/api/user", input).then((res) => {
         console.log(res.data);
