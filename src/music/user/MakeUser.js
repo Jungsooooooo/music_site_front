@@ -10,7 +10,6 @@ import { Button } from "@mui/material";
 
 const MakeUser = () => {
   const [idCheck, setIdCheck] = useState(null);
-  const [modalState, setModalState] = useState(true);
   const [inputAddressValue, setInputAddressValue] = useState("");
   const [inputZipCodeValue, setInputZipCodeValue] = useState("");
   const [open, setOpen] = useState(false);
