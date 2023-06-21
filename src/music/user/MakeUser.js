@@ -6,11 +6,7 @@ import Dialog from "@mui/material/Dialog";
 import DialogTitle from "@mui/material/DialogTitle";
 import DialogContent from "@mui/material/DialogContent";
 import DialogActions from "@mui/material/DialogActions";
-import IconButton from "@mui/material/IconButton";
-import CloseIcon from "@mui/icons-material/Close";
 import { Button } from "@mui/material";
-import Typography from "@mui/material/Typography";
-import { styled } from "@mui/material/styles";
 
 const MakeUser = () => {
   const [idCheck, setIdCheck] = useState(null);
@@ -35,9 +31,10 @@ const MakeUser = () => {
     const input = {
       id: document.getElementById("makeId").value,
       password: document.getElementById("makePass").value,
+      zipCode: document.getElementById("makeZipCode").value,
       address: document.getElementById("makeAddress").value,
       phone: document.getElementById("phoneNumber").value,
-      birth: document.getElementById("birth").value,
+      birth: new Date(document.getElementById("birth").value),
     };
 
     if (idCheck === null) {
@@ -71,14 +68,8 @@ const MakeUser = () => {
     });
   };
 
-  const postCodeStyle = {
-    width: "400px",
-    height: "400px",
-    display: modalState ? "block" : "none",
-  }; // 스타일 정의 code
-
   const onCompletePost = (data) => {
-    setModalState(false);
+    setOpen(false);
     setInputAddressValue(data.address);
     setInputZipCodeValue(data.zonecode);
   };
@@ -119,7 +110,7 @@ const MakeUser = () => {
 
         <div>
           <h3>주소</h3>
-          <input id="makeAddress" type="text" value={inputZipCodeValue}></input>
+          <input id="makeZipCode" type="text" value={inputZipCodeValue}></input>
           <button id="idCheckButton" onClick={handleClickOpen}>
             검색
           </button>
