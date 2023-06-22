@@ -109,14 +109,14 @@ const MakeUser = () => {
 
         <div>
           <h3>주소</h3>
-          <input id="makeZipCode" type="text" value={inputZipCodeValue}></input>
+          <input id="makeZipCode" type="text" defaultValue={inputZipCodeValue}></input>
           <button id="idCheckButton" onClick={handleClickOpen}>
             검색
           </button>
         </div>
 
         <div>
-          <input id="makeAddress" type="text" value={inputAddressValue}></input>
+          <input id="makeAddress" type="text" defaultValue={inputAddressValue}></input>
         </div>
         <div>
           <h3>휴대전화</h3>
