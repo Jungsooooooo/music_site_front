@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "../../css/loginView.css";
 import axios from "axios";
 import { useDispatch } from "react-redux";
@@ -13,7 +13,6 @@ const LoginView = () => {
     const input = {
       id: document.getElementById("putId").value,
       password: document.getElementById("putPass").value,
-
     };
 
     if (input.id === "" && input.password === "") {
@@ -21,7 +20,6 @@ const LoginView = () => {
       navigate("/");
     } else {
       return axios.post("/api/user/login", input).then((res) => {
-
         console.log({ res });
 
         if (res.status === 200 && res.data.id !== "") {
@@ -51,7 +49,7 @@ const LoginView = () => {
           <a href="/join" id="register">
             회원가입
           </a>
-          <a href="/login" id="findId">
+          <a href="/findUser" id="findId">
             아이디 찾기
           </a>
           <a href="/login" id="findPassword">
