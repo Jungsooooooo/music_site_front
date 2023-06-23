@@ -8,6 +8,7 @@ import MakeUser from "./music/user/MakeUser";
 import TopHeader from "./music/main/TopHeader";
 import MusicWrite2 from "./music/musicWrite/MusicWrite2";
 import UserInfo from "./music/admin/UserInfo";
+import FindUser from "./music/user/FindUser";
 
 const App = () => {
   return (
@@ -22,7 +23,7 @@ const App = () => {
           <Route path="/join" element={<MakeUser />} />
           <Route path="/musicWrite" element={<MusicWrite2 />} />
           <Route path="/admin/UserInfo" element={<UserInfo />} />
-          {/* <Route path="/musicWrite2" element={<MusicWrite2/>}/> */}
+          <Route path="/finduser" element={<FindUser />} />
         </Routes>
       </Router>
     </div>
