@@ -34,6 +34,8 @@ const MakeUser = () => {
       address: document.getElementById("makeAddress").value,
       phone: document.getElementById("phoneNumber").value,
       birth: new Date(document.getElementById("birth").value),
+      name: document.getElementById("makeName").value,
+      email: document.getElementById("email").value,
     };
 
     if (idCheck === null) {
@@ -44,6 +46,10 @@ const MakeUser = () => {
       alert("비밀번호는 8자리 이상 입력해주세요.");
     } else if (document.getElementById("makePass").value !== document.getElementById("checkPass").value) {
       alert("비밀번호를 확인해주세요.");
+    } else if (document.getElementById("makeName").value === null) {
+      alert("이름을 입력해주세요.");
+    } else if (document.getElementById("email").value === null) {
+      alert("이메일을 입력해주세요.");
     } else {
       return axios.post("/api/user", input).then((res) => {
         console.log(res.data);
