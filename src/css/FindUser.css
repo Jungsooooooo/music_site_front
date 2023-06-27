@@ -1,8 +1,23 @@
 .findUser {
   width: 25em;
-  margin: 0 auto;
+  margin: 15em auto;
 }
 
-#findId {
-  width: 60%;
+#findIdName {
+  margin-left: 4em;
+  height: 2em;
+}
+
+#findIdEmail {
+  margin-top: 10px;
+  margin-left: 2.8em;
+  height: 2em;
+}
+
+.findUserLableName {
+  font-weight: bold;
+}
+
+.findButton {
+  margin: 2em 1em 4em 10em !important;
 }
