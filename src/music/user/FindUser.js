@@ -20,11 +20,11 @@ const FindUser = () => {
     <div className="findUser">
       <div>
         <label className="findUserLableName">이름</label>
-        <input id="findIdName" type="text" placeholder="아이디를 입력해주세요"></input>
+        <input id="findIdName" type="text"></input>
       </div>
       <div>
         <label className="findUserLableName">이메일</label>
-        <input id="findIdEmail" type="text" placeholder="비밀번호는 8자리 이상"></input>
+        <input id="findIdEmail" type="text"></input>
       </div>
       <div>
         <Button variant="outlined" className="findButton" onClick={findId}>
