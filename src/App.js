@@ -9,6 +9,7 @@ import TopHeader from "./music/main/TopHeader";
 import MusicWrite2 from "./music/musicWrite/MusicWrite2";
 import UserInfo from "./music/admin/UserInfo";
 import FindUser from "./music/user/FindUser";
+import FindPassword from "./music/user/FindPassword";
 
 const App = () => {
   return (
@@ -24,6 +25,7 @@ const App = () => {
           <Route path="/musicWrite" element={<MusicWrite2 />} />
           <Route path="/admin/UserInfo" element={<UserInfo />} />
           <Route path="/finduser" element={<FindUser />} />
+          <Route path="/findPassword" element={<FindPassword />} />
         </Routes>
       </Router>
     </div>
