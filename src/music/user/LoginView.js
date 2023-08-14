@@ -19,7 +19,7 @@ const LoginView = () => {
       dispatch(sessionInfo({ id: "관리자" }));
       navigate("/");
     } else {
-      return axios.post("/api/user/login", input).then((res) => {
+      return axios.post("/api/users/login", input).then((res) => {
         console.log({ res });
 
         if (res.status === 200 && res.data.id !== "") {
