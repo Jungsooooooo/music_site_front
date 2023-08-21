@@ -61,7 +61,7 @@ const MakeUser = () => {
   const checkId = () => {
     const id = document.getElementById("makeId").value;
 
-    return axios.get("/api/users/" + id).then((res) => {
+    return axios.get("/api/users/check/" + id).then((res) => {
       console.log(res.data);
       if (res.data === true) {
         alert("이미 있는 아이디 입니다.");
