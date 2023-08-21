@@ -51,7 +51,7 @@ const MakeUser = () => {
     } else if (document.getElementById("email").value === null) {
       alert("이메일을 입력해주세요.");
     } else {
-      return axios.post("/api/user", input).then((res) => {
+      return axios.post("/api/users", input).then((res) => {
         console.log(res.data);
         alert("회원가입이 완료되었습니다");
       });
@@ -61,7 +61,7 @@ const MakeUser = () => {
   const checkId = () => {
     const id = document.getElementById("makeId").value;
 
-    return axios.get("/api/user/" + id).then((res) => {
+    return axios.get("/api/users/" + id).then((res) => {
       console.log(res.data);
       if (res.data === true) {
         alert("이미 있는 아이디 입니다.");

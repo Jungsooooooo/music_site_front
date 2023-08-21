@@ -19,7 +19,7 @@ const LoginView = () => {
       dispatch(sessionInfo({ id: "관리자" }));
       navigate("/");
     } else {
-      return axios.post("/api/user/login", input).then((res) => {
+      return axios.post("/api/users/login", input).then((res) => {
         console.log({ res });
 
         if (res.status === 200 && res.data.id !== "") {
@@ -52,7 +52,7 @@ const LoginView = () => {
           <a href="/findUser" id="findId">
             아이디 찾기
           </a>
-          <a href="/login" id="findPassword">
+          <a href="/findpassword" id="findPassword">
             비밀번호 찾기
           </a>
         </div>
