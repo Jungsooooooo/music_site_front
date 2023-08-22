@@ -14,8 +14,6 @@ const TopHeader = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   console.log({ user });
-  console.log(user.id);
-  console.log(user.id === "");
 
   const goTologin = () => {
     navigate("/login");
@@ -38,7 +36,7 @@ const TopHeader = () => {
           Music_Reco
         </a>
         {user.login === true ? (
-          <div id = "musicWrite">
+          <div id="musicWrite">
             <Button
               variant="outlined"
               color="secondary"
@@ -61,9 +59,14 @@ const TopHeader = () => {
             </Button>
           </div>
         ) : (
-          <Button  variant="outlined"
-          color="secondary"
-          size="medium" id="musicWrite" className="topheader" onClick={goTologin}>
+          <Button
+            variant="outlined"
+            color="secondary"
+            size="medium"
+            id="musicWrite"
+            className="topheader"
+            onClick={goTologin}
+          >
             로그인
           </Button>
         )}
