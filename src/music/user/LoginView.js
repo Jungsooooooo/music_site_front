@@ -24,7 +24,7 @@ const LoginView = () => {
 
         if (res.status === 200 && res.data.id !== "") {
           alert("환영합니다");
-          dispatch(sessionInfo({ id: res.data.id }, { uid: res.data.uid }));
+          dispatch(sessionInfo({ token: res.data }));
           navigate("/");
         } else {
           alert("정확한 아이디와 비밀번호를 입력해주세요");

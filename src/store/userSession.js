@@ -1,12 +1,11 @@
 export const session = "userSession";
 export const logout = "logout";
 
-export const sessionInfo = (userId, uid, login) => ({ type: session, userId, uid, login });
-export const sessionlogout = (userId, uid, login) => ({ type: logout, userId, uid, login });
+export const sessionInfo = (token) => ({ type: session, token });
+export const sessionlogout = (token) => ({ type: logout, token });
 
 const initialState = {
-  id: "",
-  uid: "",
+  token: "",
   login: false,
 };
 
@@ -15,15 +14,13 @@ const userSession = (state = initialState, action) => {
     case session:
       return {
         ...state,
-        id: action.userId.id,
-        uid: action.uid.uid,
+        token: action.token,
         login: true,
       };
     case logout:
       return {
         ...state,
-        id: "",
-        uid: "",
+        token: action.token,
         login: false,
       };
 
