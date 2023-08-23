@@ -21,6 +21,7 @@ const TopHeader = () => {
 
   const logout = () => {
     dispatch(sessionlogout());
+    localStorage.removeItem("jwtToken");
     navigate("/login");
   };
 
