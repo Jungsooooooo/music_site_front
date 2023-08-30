@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import { useSelector } from "react-redux";
+import Form from 'react-bootstrap/Form';
 
 import axios from "axios";
 
 import { CKEditor } from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+import Button from "@mui/material/Button";
 
 import "../../css/MusicWrite2.css";
 
@@ -17,29 +19,28 @@ const MusicWrite2 = () => {
   console.log({ user });
 
   const musicRecoWrite = () => {
-    const input = {
-      title: document.getElementById("title").value,
-      genre: document.getElementById("genre").value,
-      recoReason: document.getElementById("recoReason").value,
-      userUUID: user.uid,
-    };
-    axios.post("/api/musicMain", input);
+    axios.post("/api/musics", "",{headers:{Authorization:localStorage.getItem("jwtToken")}});
   };
 
   return (
     <div className="entireForm">
-      <h2>Title</h2>
+      
+      <Form.Control size="lg" type="text" placeholder="제목 입력해주세요" className="musicWriteTitle"/>
       <CKEditor
+      className="ckForm"
         editor={ClassicEditor}
+        config={{
+          placeholder:"내용을 입력해주세요",
+        }}
         data=""
         // onReady={(editor) => {
         //   // You can store the "editor" and use when it is needed.
         //   console.log("Editor is ready to use!", editor);
         // }}
-        // onChange={(event, editor) => {
-        //   const data = editor.getData();
-        //   console.log({ event, editor, data });
-        // }}
+        onChange={(event, editor) => {
+          const data = editor.getData();
+          console.log({ event, editor, data });
+        }}
         // onBlur={(event, editor) => {
         //   console.log("Blur.", editor);
         // }}
@@ -47,6 +48,9 @@ const MusicWrite2 = () => {
         //   console.log("Focus.", editor);
         // }}
       />
+      <Button variant="contained" color="success" onClick={musicRecoWrite}>
+          작성
+        </Button>
     </div>
   );
 };
