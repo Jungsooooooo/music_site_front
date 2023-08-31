@@ -19,15 +19,21 @@ const MusicWrite2 = () => {
   console.log({ user });
 
   const musicRecoWrite = () => {
-    axios.post("/api/musics", "",{headers:{Authorization:localStorage.getItem("jwtToken")}});
+    const input = {
+      title: document.getElementById("musicWriteTitle").value,
+      recoReason: document.getElementById("ckForm").value,
+      userUUID: user.uid,
+    };
+    axios.post("/api/musics", input,{headers:{"Authorization":localStorage.getItem("jwtToken")}}).then((res)=>{
+      console.log(res)
+    });
   };
 
   return (
     <div className="entireForm">
-      
-      <Form.Control size="lg" type="text" placeholder="제목 입력해주세요" className="musicWriteTitle"/>
+      <Form.Control size="lg" type="text" placeholder="제목 입력해주세요" id="musicWriteTitle"/>
       <CKEditor
-      className="ckForm"
+      id="ckForm"
         editor={ClassicEditor}
         config={{
           placeholder:"내용을 입력해주세요",
