@@ -9,8 +9,13 @@ import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import Button from "@mui/material/Button";
 
 import "../../css/MusicWrite2.css";
+import { useState } from "react";
+
 
 const MusicWrite2 = () => {
+
+  const [reco,setReco] = useState("");
+
   const user = useSelector((state) => {
     console.log(state);
     return state.userSession;
@@ -21,7 +26,7 @@ const MusicWrite2 = () => {
   const musicRecoWrite = () => {
     const input = {
       title: document.getElementById("musicWriteTitle").value,
-      recoReason: document.getElementById("ckForm").value,
+      recoReason: reco,
       userUUID: user.uid,
     };
     axios.post("/api/musics", input,{headers:{"Authorization":localStorage.getItem("jwtToken")}}).then((res)=>{
@@ -45,7 +50,7 @@ const MusicWrite2 = () => {
         // }}
         onChange={(event, editor) => {
           const data = editor.getData();
-          console.log({ event, editor, data });
+          setReco(data);
         }}
         // onBlur={(event, editor) => {
         //   console.log("Blur.", editor);
