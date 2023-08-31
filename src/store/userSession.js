@@ -1,12 +1,13 @@
 export const session = "userSession";
 export const logout = "logout";
 
-export const sessionInfo = (token) => ({ type: session, token });
-export const sessionlogout = (token) => ({ type: logout, token });
+export const sessionInfo = (token,uid) => ({ type: session, token,uid });
+export const sessionlogout = (token,uid) => ({ type: logout, token,uid });
 
 const initialState = {
   token: "",
   login: false,
+  uid:""
 };
 
 const userSession = (state = initialState, action) => {
@@ -16,12 +17,14 @@ const userSession = (state = initialState, action) => {
         ...state,
         token: action.token,
         login: true,
+        uid:action.uid
       };
     case logout:
       return {
         ...state,
         token: action.token,
         login: false,
+        uid:""
       };
 
     default:

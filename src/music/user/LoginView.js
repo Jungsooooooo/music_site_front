@@ -24,7 +24,7 @@ const LoginView = () => {
 
         if (res.status === 200 && res.data.id !== "") {
           alert("환영합니다");
-          dispatch(sessionInfo({ token: res.data }));
+          dispatch(sessionInfo( res.data.token,res.data.uuid));
           localStorage.setItem("jwtToken", res.data);
           navigate("/");
         } else {
