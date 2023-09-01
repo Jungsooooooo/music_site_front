@@ -1,5 +1,7 @@
 import "../../css/mainView.css";
 import { useSelector } from "react-redux";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 import music1 from "./music1.jpg";
 import music2 from "./music2.jpg";
@@ -11,10 +13,24 @@ import { Button } from "react-bootstrap-buttons";
 
 import Card from "react-bootstrap/Card";
 
+
 const MainView = () => {
+  const [mData, setMData] = useState("");
+
   const user = useSelector((state) => {
     return state.userSession;
   });
+
+  useEffect(()=>{
+    getMData().then((res)=>{
+      setMData(res.data);
+      console.log(mData);
+    })
+  },[])
+
+  const getMData = () => {
+    return axios.get("/api/musics",{headers:{Authorization:localStorage.getItem("jwtToken")}});
+  }
 
   return (
     <>
