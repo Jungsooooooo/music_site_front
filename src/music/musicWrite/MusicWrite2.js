@@ -26,9 +26,10 @@ const MusicWrite2 = () => {
   const musicRecoWrite = () => {
     const input = {
       title: document.getElementById("musicWriteTitle").value,
-      recoReason: reco,
+      info: reco,
       userUUID: user.uid,
     };
+    console.log({input});
     axios.post("/api/musics", input,{headers:{"Authorization":localStorage.getItem("jwtToken")}}).then((res)=>{
       console.log(res)
     });
