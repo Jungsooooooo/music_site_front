@@ -14,6 +14,7 @@ import { Button } from "react-bootstrap-buttons";
 import Card from "react-bootstrap/Card";
 
 
+
 const MainView = () => {
   const [mData, setMData] = useState([]);
 
@@ -23,7 +24,7 @@ const MainView = () => {
 
   useEffect(()=>{
     getMData().then((res)=>{
-      console.log(res.data)
+      setMData(res.data)
     })
   },[])
 
@@ -31,32 +32,26 @@ const MainView = () => {
     return axios.get("/api/musics",{headers:{Authorization:localStorage.getItem("jwtToken")}});
   }
 
-  return (
-    <>
-     <div style={{ margin: "30px 0 0 100px" }}>
-    <Row>
-    <Col>
-     
 
-        
-          {mData.map((res)=>{
-           console.log(res);
-           <Card style={{ float: "left", width: "500px" }}>
-           <Card.Body>
-               <Card.Title>{res.title}</Card.Title>
-               <Card.Text>추천1</Card.Text>
-             </Card.Body>
-             <Button variant="outline-primary">Primary</Button>
-             <Card.Footer>
-               <small className="text-muted">Last updated 3 mins ago</small>
-             </Card.Footer>
-           </Card>
-          
-       })}
-      </Col>
-        </Row>
-        </div>
-    </>
+  return (     
+    <div>
+     {mData.map((data,index)=>{
+      return(
+      <div>
+      <Card key={index} style={{ float:"left", width: "18rem" }}>
+      <Card.Body>
+          <Card.Title>{data.title}</Card.Title>
+          <Card.Text>추천1</Card.Text>
+        </Card.Body>
+        <Button variant="outline-primary">Primary</Button>
+        <Card.Footer>
+          <small className="text-muted">Last updated 3 mins ago</small>
+        </Card.Footer>
+      </Card>
+      </div>
+      )
+  })}
+  </div>
   );
 };
 
