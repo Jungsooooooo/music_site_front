@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { useSelector } from "react-redux";
-import Form from 'react-bootstrap/Form';
+import Form from "react-bootstrap/Form";
 
 import axios from "axios";
 
@@ -11,10 +11,8 @@ import Button from "@mui/material/Button";
 import "../../css/MusicWrite2.css";
 import { useState } from "react";
 
-
 const MusicWrite2 = () => {
-
-  const [reco,setReco] = useState("");
+  const [reco, setReco] = useState("");
 
   const user = useSelector((state) => {
     console.log(state);
@@ -29,20 +27,29 @@ const MusicWrite2 = () => {
       info: reco,
       userUUID: user.uid,
     };
-    console.log({input});
-    axios.post("/api/musics", input,{headers:{"Authorization":localStorage.getItem("jwtToken")}}).then((res)=>{
-      console.log(res)
-    });
+    console.log({ input });
+    axios
+      .post("/api/musics", input, {
+        headers: { Authorization: localStorage.getItem("jwtToken") },
+      })
+      .then((res) => {
+        console.log(res);
+      });
   };
 
   return (
     <div className="entireForm">
-      <Form.Control size="lg" type="text" placeholder="제목 입력해주세요" id="musicWriteTitle"/>
+      <Form.Control
+        size="lg"
+        type="text"
+        placeholder="제목 입력해주세요"
+        id="musicWriteTitle"
+      />
       <CKEditor
-      id="ckForm"
+        id="ckForm"
         editor={ClassicEditor}
         config={{
-          placeholder:"내용을 입력해주세요",
+          placeholder: "내용을 입력해주세요",
         }}
         data=""
         // onReady={(editor) => {
@@ -50,8 +57,11 @@ const MusicWrite2 = () => {
         //   console.log("Editor is ready to use!", editor);
         // }}
         onChange={(event, editor) => {
-          const data = editor.getData();
-          setReco(data);
+          let data = editor.getData();
+
+          let deletePTag = data.replace(/<p>/g, "").replace(/<\/p>/g, "");
+
+          setReco(deletePTag);
         }}
         // onBlur={(event, editor) => {
         //   console.log("Blur.", editor);
@@ -61,8 +71,8 @@ const MusicWrite2 = () => {
         // }}
       />
       <Button variant="contained" color="success" onClick={musicRecoWrite}>
-          작성
-        </Button>
+        작성
+      </Button>
     </div>
   );
 };
