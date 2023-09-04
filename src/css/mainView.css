@@ -14,7 +14,7 @@
 }
 
 .topheader {
-  margin: 0 0 0 10em;
+  margin-left: 5em;
 }
 
 .mainImage {
@@ -26,8 +26,8 @@
 }
 
 #musicWrite {
- float:right;
- margin-right:25px;
+  float: right;
+  margin-right: 25px;
 }
 
 a:visited {
@@ -40,6 +40,9 @@ a:link {
   color: rgb(255, 102, 153);
 }
 
+.mainViewList {
+  margin: 10em;
+}
 
 /* @media(max-width: 1600px) {
   #musicWrite {
@@ -48,7 +51,6 @@ a:link {
     margin-right: 1em;
   }
 } */
-
 
 /* @media(max-width: 1920px) {
   #musicWrite {

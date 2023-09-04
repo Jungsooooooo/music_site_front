@@ -13,8 +13,6 @@ import { Button } from "react-bootstrap-buttons";
 
 import Card from "react-bootstrap/Card";
 
-
-
 const MainView = () => {
   const [mData, setMData] = useState([]);
 
@@ -22,36 +20,37 @@ const MainView = () => {
     return state.userSession;
   });
 
-  useEffect(()=>{
-    getMData().then((res)=>{
-      setMData(res.data)
-    })
-  },[])
+  useEffect(() => {
+    getMData().then((res) => {
+      setMData(res.data);
+    });
+  }, []);
 
   const getMData = () => {
-    return axios.get("/api/musics",{headers:{Authorization:localStorage.getItem("jwtToken")}});
-  }
+    return axios.get("/api/musics", {
+      headers: { Authorization: localStorage.getItem("jwtToken") },
+    });
+  };
 
-
-  return (     
+  return (
     <div>
-     {mData.map((data,index)=>{
-      return(
-      <div>
-      <Card key={index} style={{ float:"left", width: "18rem" }}>
-      <Card.Body>
-          <Card.Title>{data.title}</Card.Title>
-          <Card.Text>추천1</Card.Text>
-        </Card.Body>
-        <Button variant="outline-primary">Primary</Button>
-        <Card.Footer>
-          <small className="text-muted">Last updated 3 mins ago</small>
-        </Card.Footer>
-      </Card>
-      </div>
-      )
-  })}
-  </div>
+      {mData.map((data, index) => {
+        return (
+          <div className="mainViewList">
+            <Card key={index} style={{ float: "left", width: "18rem" }}>
+              <Card.Body>
+                <Card.Title>{data.title}</Card.Title>
+                <Card.Text>{data.info}</Card.Text>
+              </Card.Body>
+              <Button variant="outline-primary">Primary</Button>
+              <Card.Footer>
+                <small className="text-muted">Last updated 3 mins ago</small>
+              </Card.Footer>
+            </Card>
+          </div>
+        );
+      })}
+    </div>
   );
 };
 
