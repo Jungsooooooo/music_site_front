@@ -5,8 +5,11 @@ import { useDispatch } from "react-redux";
 
 import Button from "@mui/material/Button";
 import { sessionlogout } from "../../store/userSession";
+import { getCookie, deleteCookie } from "../../cookie/Cookie";
 
 const TopHeader = () => {
+  const cookie = getCookie("jwtToken");
+  console.log({ cookie });
   const user = useSelector((state) => {
     console.log(state);
     return state.userSession;
@@ -21,7 +24,7 @@ const TopHeader = () => {
 
   const logout = () => {
     dispatch(sessionlogout());
-    localStorage.removeItem("jwtToken");
+    deleteCookie("jwtToken");
     navigate("/login");
   };
 
@@ -36,7 +39,7 @@ const TopHeader = () => {
         <a id="goToReco" className="topheader" href="/">
           Music_Reco
         </a>
-        {user.login === true ? (
+        {user.login === true || cookie !== undefined ? (
           <div id="musicWrite">
             <Button
               variant="outlined"

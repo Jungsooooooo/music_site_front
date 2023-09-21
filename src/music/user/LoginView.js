@@ -4,10 +4,13 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 import { sessionInfo } from "../../store/userSession";
 import { useNavigate } from "react-router-dom";
+import { setCookie } from "../../cookie/Cookie";
 
 const LoginView = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const currentDate = new Date();
+  currentDate.setMinutes(currentDate.getMinutes() + 60);
 
   const login = () => {
     const input = {
@@ -24,8 +27,9 @@ const LoginView = () => {
 
         if (res.status === 200 && res.data.id !== "") {
           alert("환영합니다");
-          dispatch(sessionInfo( res.data.token,res.data.uuid));
-          localStorage.setItem("jwtToken", res.data.token);
+          dispatch(sessionInfo(res.data.token, res.data.uuid));
+          setCookie("jwtToken", res.data.token, { expires: currentDate });
+
           navigate("/");
         } else {
           alert("정확한 아이디와 비밀번호를 입력해주세요");
@@ -41,10 +45,18 @@ const LoginView = () => {
           Music Reco
         </a>
         <div>
-          <input id="putId" type="text" placeholder="아이디를 입력해주세요"></input>
+          <input
+            id="putId"
+            type="text"
+            placeholder="아이디를 입력해주세요"
+          ></input>
         </div>
         <div>
-          <input id="putPass" type="password" placeholder="비밀번호는 8자리 이상"></input>
+          <input
+            id="putPass"
+            type="password"
+            placeholder="비밀번호는 8자리 이상"
+          ></input>
         </div>
         <div className="joinOrFind">
           <a href="/join" id="register">

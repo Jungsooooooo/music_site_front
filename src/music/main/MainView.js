@@ -2,6 +2,7 @@ import "../../css/mainView.css";
 import { useSelector } from "react-redux";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { getCookie } from "../../cookie/Cookie";
 
 import music1 from "./music1.jpg";
 import music2 from "./music2.jpg";
@@ -28,7 +29,7 @@ const MainView = () => {
 
   const getMData = () => {
     return axios.get("/api/musics", {
-      headers: { Authorization: localStorage.getItem("jwtToken") },
+      headers: { Authorization: getCookie("jwtToken") },
     });
   };
 
@@ -42,7 +43,6 @@ const MainView = () => {
                 <Card.Title>{data.title}</Card.Title>
                 <Card.Text>{data.info}</Card.Text>
               </Card.Body>
-              <Button variant="outline-primary">Primary</Button>
               <Card.Footer>
                 <small className="text-muted">Last updated 3 mins ago</small>
               </Card.Footer>

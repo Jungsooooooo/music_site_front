@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { useSelector } from "react-redux";
 import Form from "react-bootstrap/Form";
+import { getCookie } from "../../cookie/Cookie";
 
 import axios from "axios";
 
@@ -30,7 +31,7 @@ const MusicWrite2 = () => {
     console.log({ input });
     axios
       .post("/api/musics", input, {
-        headers: { Authorization: localStorage.getItem("jwtToken") },
+        headers: { Authorization: getCookie("jwtToken") },
       })
       .then((res) => {
         console.log(res);
